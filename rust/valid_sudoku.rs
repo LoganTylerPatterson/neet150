@@ -9,6 +9,10 @@ impl Solution {
     for row in 0..grid.len() {
       for col in 0..row.len() {
         let num = grid[row][col];
+        if num == '.'{
+          continue
+        }
+        
         let ninesIndex = (row / 3) * 3 + col / 3;
         if rows[row].contains_key(&num) || cols[col].contains_key(&num) || nines[ninesIndex].contains_key(&num){
           false;
