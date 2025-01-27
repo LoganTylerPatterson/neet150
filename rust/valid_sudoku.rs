@@ -12,7 +12,7 @@ impl Solution {
         if num == '.'{
           continue
         }
-        
+        let num = grid[row][col] as usize - '1' as usize;
         let ninesIndex = (row / 3) * 3 + col / 3;
         if rows[row].contains_key(&num) || cols[col].contains_key(&num) || nines[ninesIndex].contains_key(&num){
           false;
